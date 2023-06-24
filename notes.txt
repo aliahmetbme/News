@@ -1,0 +1,89 @@
+ FlatList
+React Native FlatList, React Native'in bir bileşeni olan bir liste görüntüleme bileşenidir. FlatList, büyük veri kümelerini verimli bir şekilde listelemek için kullanılır. 
+Bu bileşen, performans açısından optimize edilmiş bir sanal liste görüntülemesi sunar, yani sadece görüntülenen öğeleri belleğe alır ve sayfa kaydırıldıkça görünümü günceller.
+
+FlatList, genellikle mobil uygulamalarda çok sayıda öğe içeren dinamik listeler oluşturmak için kullanılır. 
+Öğelerin yüksek performanslı bir şekilde görüntülenmesini sağlar ve bellek kullanımını minimize eder.
+
+FlatList, iki önemli prop'a sahiptir:
+
+1. data: Listeleyeceğiniz öğelerin bir dizisini temsil eder.
+2. renderItem: Her öğe için nasıl bir görünüm oluşturulacağını tanımlayan bir işlevi temsil eder.
+
+FlatList ayrıca diğer birçok özelliğe de sahiptir. 
+-----> Örneğin, yatay veya dikey olarak düzenlenebilir, içerisinde kaydırılabilir öğeler içerebilir, yeniden düzenlenebilirlik özellikleriyle desteklenebilir ve daha fazlası.
+
+React Native FlatList, verimli ve hızlı bir şekilde büyük veri kümelerini görüntülemek için yaygın olarak kullanılan bir bileşendir ve React Native'in temel bir parçasıdır.
+
+Keyextracter ----> çok veri olduğu zaman, id leri tutar 
+`keyExtractor` özelliği, React Native'deki `FlatList` bileşeninde kullanılan bir prop'tur. Bu prop, liste öğelerinin benzersiz bir anahtar değeri olmasını sağlar. `keyExtractor` prop'u, `FlatList` tarafından liste öğelerini verimli bir şekilde yönetmek ve yeniden düzenlemek için kullanılır.
+
+`keyExtractor` prop'u, her bir liste öğesine benzersiz bir anahtar sağlamak için kullanılabilir. Bu anahtarlar, liste öğelerinin eşsiz bir şekilde tanımlanmasını sağlar ve performansı artırır. `keyExtractor` prop'u, aşağıdaki gibi kullanılır:
+
+```javascript
+<FlatList
+  data={data}
+  renderItem={renderItem}
+  keyExtractor={(item, index) => item.id.toString()}
+/>
+```
+
+Yukarıdaki örnekte, `keyExtractor` prop'u, `data` dizisindeki her bir öğe için benzersiz bir anahtar değeri sağlamak için kullanılır.
+`item.id` değeri, her bir öğenin benzersiz bir kimliğini temsil eder. `toString()` metodu kullanılarak `item.id` değeri bir dizeye dönüştürülür.
+
+`keyExtractor` prop'unun işlevi, `FlatList` bileşeninin her bir öğeyi benzersiz bir şekilde tanımlamasını sağlamaktır.
+Bu, liste öğelerinin düzgün bir şekilde yeniden düzenlenmesini, güncellenmesini ve performansının artırılmasını sağlar.
+
+Anahtar değerleri benzersiz olmalıdır ve sadece liste öğelerinin kendileri arasında benzersiz olması yeterli değildir.
+Örneğin, veritabanından gelen bir liste için benzersiz bir kimlik veya bir özellik kullanılabilir.
+
+Bu şekilde, `keyExtractor` prop'unu kullanarak React Native'deki `FlatList` bileşeninde liste öğeleri için benzersiz anahtar değerleri belirleyebilirsiniz.
+
+Text Align 
+
+React Native'de `Text` bileşeninin hizalamasını ayarlamak için `textAlign` özelliğini kullanabilirsiniz. Bu özellik, `Text` bileşeninin içerdiği metnin yatay hizalamasını kontrol etmenize olanak sağlar.
+
+`textAlign` özelliğine aşağıdaki değerler atanabilir:
+
+- `"auto"`: Varsayılan değerdir. Metni cihazın dil ve metin biçimlendirme kurallarına göre otomatik olarak hizalar.
+- `"left"`: Metni sola hizalar.
+- `"right"`: Metni sağa hizalar.
+- `"center"`: Metni ortalar.
+- `"justify"`: Metni yaslar.
+
+İşte bir örnek:
+
+```javascript
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text} textAlign="center">
+        Merhaba, Dünya!
+      </Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 20,
+    textAlign: 'center',
+  },
+});
+
+export default App;
+```
+
+Yukarıdaki örnekte, `<Text>` bileşeninin `textAlign` özelliği `"center"` olarak ayarlanmıştır. Bu nedenle, metin ortalanmış olarak görüntülenecektir.
+
+Özelliği diğer değerlerle değiştirerek metnin hizalamasını istediğiniz gibi ayarlayabilirsiniz. Bileşenin stilini belirleyen `StyleSheet` kullanılarak diğer özellikler de ayarlanabilir.
+
+Bu şekilde, React Native'de `Text` bileşeninin hizalamasını istediğiniz şekilde kontrol edebilirsiniz.
